@@ -10,7 +10,7 @@ export default function Home() {
      <main className="min-h-screen bg-gradient-to-br from-white to-gray-100 text-gray-800 p-6">
       <header className="mb-10">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">
-          Welcome to <span className="text-purple-600">GeineTools</span>
+          Welcome to <span className="text-purple-600">Tools Alchemy</span>
         </h1>
         <p className="text-center text-lg text-gray-600">
           Smart Tools. Real Impact.
