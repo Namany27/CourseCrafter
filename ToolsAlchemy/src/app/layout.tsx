@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ReactNode } from "react";
 import "./globals.css";
-
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,6 +22,22 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
+
+<head>
+        <Script
+          data-name="BMC-Widget"
+          data-cfasync="false"
+          src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+          data-id="ToolAlchemy"
+          data-description="Support me on Buy me a coffee!"
+          data-message="Love the tools?Support the magic behind ToolAlchemy by buying me a coffee!Every cup fuels more features, faster updates, and awesome new tools.Thanks for keeping the alchemy alive!"
+          data-color="#5F7FFF"
+          data-position="Right"
+          data-x-margin="18"
+          data-y-margin="18"
+          strategy="afterInteractive"
+        />
+      </head>
       <body className="bg-gray-50 text-gray-800 font-sans">{children}</body>
     </html>
   );
