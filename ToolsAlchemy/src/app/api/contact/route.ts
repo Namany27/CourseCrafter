@@ -33,7 +33,17 @@ ${message}
 
     return new Response(JSON.stringify({ success: true }), { status: 200 });
   } catch (error) {
-    console.error("API error:", error);
-    return new Response(JSON.stringify({ success: false, error: error.message }), { status: 500 });
+  console.error("API error:", error);
+
+  let errorMessage = "An unknown error occurred.";
+
+  if (error instanceof Error) {
+    errorMessage = error.message;
+  }
+
+  return new Response(
+    JSON.stringify({ success: false, error: errorMessage }),
+    { status: 500 }
+  );
   }
 }
