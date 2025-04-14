@@ -1,23 +1,31 @@
 import axios from "axios";
 
-export async function generateCoverLetter(resume: string, jd: string, tone: string) {
-  const prompt = `
-You are a professional cover letter writer. Write a ${tone} cover letter tailored to the job description based on the candidate's resume.
+export async function generateCoverLetter(prompt) {
+  // const prompt = `
 
-Resume:
-${resume}
-
-Job Description:
-${jd}
-
-Only output the final cover letter.
-  `.trim();
+  // You are an expert cover letter writer. Using the resume and job description below, write a ${tone.toLowerCase()} cover letter tailored specifically for this job.
+  
+  // Resume:
+  // ${resume}
+  
+  // Job Description:
+  // ${jobDesc}
+  
+  // Make sure:
+  // - The resume can be a bit here and there due to it extracted from a pdf so try to make sense of data given in resume.
+  // - Do NOT include any variables or placeholders like [Your Name], [Job Title], etc.
+  // - Use real data from the resume wherever needed — do not leave anything empty.
+  // - If information seems unclear or incomplete, do your best to infer based on available context.
+  // - Only return the final cover letter — no extra formatting or explanation.
+  
+  // `.trim();
+  
 
   try {
     const response = await axios.post(
       "https://openrouter.ai/api/v1/chat/completions",
       {
-        model: "mistralai/mixtral-8x7b-instruct",
+        model: "deepseek/deepseek-chat-v3-0324",
         messages: [{ role: "user", content: prompt }],
       },
       {

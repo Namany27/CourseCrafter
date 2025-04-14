@@ -3,8 +3,8 @@ import { generateCoverLetter } from "@/lib/generateCoverLetter";
 
 export async function POST(req: NextRequest) {
   try {
-    const { resume, jobDescription, tone } = await req.json();
-    const coverLetter = await generateCoverLetter(resume, jobDescription, tone);
+    const { prompt } = await req.json();
+    const coverLetter = await generateCoverLetter(prompt);
     return NextResponse.json({ coverLetter });
   } catch (err) {
     console.error("API Error:", err);

@@ -8,30 +8,48 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "No file provided" }, { status: 400 });
   }
 
-  const buffer = await file.arrayBuffer();
-  const blob = new Blob([buffer], { type: file.type });
+  const buffer = Buffer.from(await file.arrayBuffer());
 
-  const uploadForm = new FormData();
-  uploadForm.append("file", blob, file.name);
-
-  const apiKey = process.env.PDFCO_API_KEY;
-  if (!apiKey) {
-    return NextResponse.json({ error: "Missing API key" }, { status: 500 });
-  }
-
-  const response = await fetch("api.pdf.co/v1/pdf/convert/to/text", {
+  // Step 1: Upload the file to PDF.co
+  const uploadRes = await fetch("https://api.pdf.co/v1/file/upload", {
     method: "POST",
     headers: {
-      "x-api-key": apiKey,
+      "x-api-key": process.env.PDFCO_API_KEY!,
     },
-    body: uploadForm,
+    body: (() => {
+      const data = new FormData();
+      data.append("file", new Blob([buffer]), file.name);
+      return data;
+    })(),
   });
 
-  const data = await response.json();
+  const uploadData = await uploadRes.json();
 
-  if (!response.ok) {
-    return NextResponse.json({ error: data.message || "Failed to extract text" }, { status: 500 });
+  if (!uploadData.url) {
+    return NextResponse.json({ error: "File upload failed", details: uploadData }, { status: 500 });
   }
 
-  return NextResponse.json({ text: data.body });
+  // Step 2: Convert the PDF to text
+  const convertRes = await fetch("https://api.pdf.co/v1/pdf/convert/to/text", {
+    method: "POST",
+    headers: {
+      "x-api-key": process.env.PDFCO_API_KEY!,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      url: uploadData.url,
+    }),
+  });
+
+  const convertData = await convertRes.json();
+
+  if (!convertData.url) {
+    return NextResponse.json({ error: "Conversion failed", details: convertData }, { status: 500 });
+  }
+
+  // Step 3: Fetch the resulting .txt file content
+  const textRes = await fetch(convertData.url);
+  const extractedText = await textRes.text();
+
+  return NextResponse.json({ text: extractedText });
 }

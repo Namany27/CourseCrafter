@@ -1,7 +1,11 @@
 import Link from "next/link";
+import Navbar from "@/app/components/navbar";
+import Footer from "@/app/components/footer";
 
 export default function Home() {
   return (
+    <>
+    <Navbar/>
     <main className="min-h-screen flex flex-col items-center justify-center p-6 text-center">
       <h1 className="text-4xl font-bold mb-4 text-blue-600">AI Cover Letter Tailor</h1>
       <p className="mb-6 max-w-md text-gray-600">
@@ -30,5 +34,7 @@ export default function Home() {
         ))}
       </section>
     </main>
+    <Footer/>
+    </>
   );
 }
