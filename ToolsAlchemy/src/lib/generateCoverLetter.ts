@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export async function generateCoverLetter(prompt) {
+export async function generateCoverLetter(prompt: string) {
   // const prompt = `
 
   // You are an expert cover letter writer. Using the resume and job description below, write a ${tone.toLowerCase()} cover letter tailored specifically for this job.
