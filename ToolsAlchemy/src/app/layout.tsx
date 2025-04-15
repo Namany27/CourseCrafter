@@ -37,6 +37,16 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           data-y-margin="18"
           strategy="afterInteractive"
         />
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E0G1BWRJT3"></script>
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-E0G1BWRJT3');
+/>
       </head>
       <body className="bg-gray-50 text-gray-800 font-sans">{children}</body>
     </html>
