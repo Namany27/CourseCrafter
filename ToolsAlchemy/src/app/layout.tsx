@@ -39,7 +39,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-E0G1BWRJT3"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E0G1BWRJT3"
 
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
