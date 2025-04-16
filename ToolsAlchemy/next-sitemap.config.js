@@ -1,5 +1,5 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: "https://www.toolalchemy.com",
+  siteUrl: "https://toolalchemy.vercel.app/",
     generateRobotsTxt: true,
     }; */
