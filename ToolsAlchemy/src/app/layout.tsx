@@ -46,6 +46,18 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
+
+<Script type="application/ld+json" id="structured-data" strategy="afterInteractive"
+  {JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "ToolAlchemy",
+    url: "https://www.toolalchemy.com",
+    description: "ToolAlchemy provides AI tools to enhance your productivity.",
+  })}
+/>
+
+
   {/* Google Site Verification */}
   <meta
     name="google-site-verification"
