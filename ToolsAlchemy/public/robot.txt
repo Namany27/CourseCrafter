@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://www.toolalchemy.com/sitemap.xml
+Sitemap: https://toolalchemy.vercel.app/sitemap.xml
