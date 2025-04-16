@@ -51,7 +51,7 @@ if (result.success) {
   return (
     <section className="contact py-12 px-4" id="contact">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-        {/* <TrackVisibility>
+        <TrackVisibility>
           {({ isVisible }) => (
             <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
               <iframe
@@ -63,7 +63,7 @@ if (result.success) {
 />
             </div>
           )}
-        </TrackVisibility> */}
+        </TrackVisibility> 
 
         <TrackVisibility>
           {({ isVisible }) => (
