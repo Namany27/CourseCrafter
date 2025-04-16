@@ -87,7 +87,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     }}
   />
 
-  {/* Buy Me a Coffee Widget */}
+  
+</head>
+      <body className="bg-gray-50 text-gray-800 font-sans">{children}
+{/* Buy Me a Coffee Widget */}
   <Script
     data-name="BMC-Widget"
     data-cfasync="false"
@@ -101,8 +104,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     data-y-margin="18"
     strategy="afterInteractive"
   />
-</head>
-      <body className="bg-gray-50 text-gray-800 font-sans">{children}</body>
+</body>
     </html>
   );
 }
