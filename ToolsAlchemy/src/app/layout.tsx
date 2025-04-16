@@ -15,8 +15,30 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tool Alchemy",
-  description: "A website which will help you with its everyday ai tools",
+  title: "ToolAlchemy – Everyday AI Tools",
+  description: "ToolAlchemy provides powerful AI tools to simplify daily tasks. Generate cover letters, summaries, and more with ease.",
+  keywords: ["AI tools", "cover letter generator", "ToolAlchemy", "AI productivity", "free AI tools"],
+  openGraph: {
+    title: "ToolAlchemy – Everyday AI Tools",
+    description: "Powerful free AI tools to help you with resumes, letters, and more.",
+    url: "https://toolalchemy.vercel.app/",
+    siteName: "ToolAlchemy",
+    images: [
+      {
+        url: "https://www.toolalchemy.com/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "ToolAlchemy Logo",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ToolAlchemy",
+    description: "Everyday AI tools to simplify your life.",
+    images: ["https://www.toolalchemy.com/og-image.png"],
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
