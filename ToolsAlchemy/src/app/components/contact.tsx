@@ -54,7 +54,13 @@ if (result.success) {
         {/* <TrackVisibility>
           {({ isVisible }) => (
             <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
-              <Image src={contactImg} alt="Contact Us" className="w-full h-auto" />
+              <iframe
+  src="https://www.buymeacoffee.com/ToolAlchemy?embed=true"
+  width="100%"
+  height="500"
+  allow="payment"
+  className="border rounded-lg shadow"
+/>
             </div>
           )}
         </TrackVisibility> */}
