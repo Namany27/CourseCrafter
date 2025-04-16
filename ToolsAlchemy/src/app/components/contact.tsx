@@ -54,14 +54,13 @@ if (result.success) {
         <TrackVisibility>
           {({ isVisible }) => (
             <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
-             <div className="mt-12 border-t pt-6">
-  <h2 className="text-lg font-semibold mb-4">Support ToolAlchemy</h2>
-  
-      <div class="bmc-wbtn" data-id="ToolAlchemy" data-description="Support me on Buy me a coffee!" data-message="Your support helps build more awesome tools!" data-color="#5F7FFF" data-position="Right" data-x-margin="18" data-y-margin="18"></div>
-    `,
-    }}
-  
-</div>
+             <iframe
+  src="https://www.buymeacoffee.com/ToolAlchemy?embed=true"
+  width="100%"
+  height="500"
+  allow="payment"
+  className="border rounded-lg shadow"
+/>
             </div>
           )}
         </TrackVisibility> 
