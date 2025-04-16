@@ -4,7 +4,7 @@ export default function Navbar() {
       <nav className="bg-blue-600 text-white px-6 py-4 shadow">
         <div className="max-w-5xl mx-auto flex justify-between items-center">
           <h1 className="text-lg font-bold">Tools Alchemy</h1>
-          <div className="space-x-4 text-sm">
+         
 <a
   href="https://www.buymeacoffee.com/ToolAlchemy"
   target="_blank"
@@ -16,6 +16,7 @@ export default function Navbar() {
     style={{ height: "45px", width: "162px" }}
   />
 </a>
+ <div className="space-x-4 text-sm">
             <a href="/" className="hover:underline">
               Home
             </a>
