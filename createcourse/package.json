@@ -1,5 +1,5 @@
 {
-  "name": "ai-cover-letter-tailor",
+  "name": "CourseCrafter",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,15 +8,12 @@
     "start": "next start",
     "lint": "next lint",
     "postbuild": "next-sitemap"
-
-
-    
   },
-  
   "dependencies": {
     "animate.css": "^4.1.1",
     "axios": "^1.8.4",
     "canvas": "^3.1.0",
+    "country-currency-map": "^2.1.7",
     "jspdf": "^3.0.1",
     "langchain": "^0.3.20",
     "mammoth": "^1.9.0",
@@ -26,8 +23,10 @@
     "pdf2json": "^3.1.5",
     "pdfjs-dist": "^3.4.120",
     "react": "^19.0.0",
+    "react-currency-input-field": "^3.10.0",
     "react-dom": "^19.0.0",
     "react-on-screen": "^2.1.1",
+    "react-select": "^5.10.1",
     "resend": "^4.2.0"
   },
   "devDependencies": {
